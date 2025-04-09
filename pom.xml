@@ -68,7 +68,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <browser>chrome</browser>
-        <reuseBrowser>true</reuseBrowser>
+        <reuseBrowser>false</reuseBrowser>
         <reuseBrowserCount>5</reuseBrowserCount>
     </properties>
 

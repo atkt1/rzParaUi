@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeSuite;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"com.stepdefs", "com.hooks"},
-        tags = "",
+        tags = "@RZ-Login",
         monochrome = true,
         plugin = {"pretty", "html:results/cucumber-report.html"}
 )

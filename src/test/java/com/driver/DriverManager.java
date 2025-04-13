@@ -44,6 +44,8 @@ public class DriverManager {
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless");
                     options.addArguments("--disable-gpu");
+                    options.addArguments("--no-sandbox"); // Often needed in Docker
+                    options.addArguments("--disable-dev-shm-usage"); // Can help with memory issues
                     driver = new ChromeDriver(options);
                     break;
                 case "firefox":

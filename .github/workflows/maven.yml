@@ -42,13 +42,8 @@ jobs:
           echo "Chrome Version: ${{ steps.chrome-version.outputs.CHROME_VERSION }}"
           echo "ChromeDriver Version: $(chromedriver --version)"
 
-      - name: Set up Maven
-        uses: actions/setup-maven@v4
-        with:
-          maven-version: '3.8.6' # Using a specific Maven version
-
       - name: Run UI Tests (Headless)
-        run: mvn clean test -Dbrowser=chrome-headless
+        run: clean test -DreuseBrowser=false -DreuseBrowserCount=5
 
       - name: Publish Test Report (Optional - configure your reporting tool)
         if: always() # Run even if tests fail

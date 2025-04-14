@@ -43,7 +43,7 @@ jobs:
           echo "ChromeDriver Version: $(chromedriver --version)"
 
       - name: Run UI Tests (Headless)
-        run: clean test -DreuseBrowser=false -DreuseBrowserCount=5
+        run: mvn clean test -DreuseBrowser=false -DreuseBrowserCount=5
 
       - name: Publish Test Report (Optional - configure your reporting tool)
         if: always() # Run even if tests fail

@@ -40,7 +40,7 @@ public class DriverManager {
             }
             switch (browserName.toLowerCase()) {
                 case "chrome":
-                    WebDriverManager.chromedriver().driverVersion("135.0.7049.84").setup();
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--headless");
                     options.addArguments("--disable-gpu");

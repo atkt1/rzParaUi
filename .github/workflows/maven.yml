@@ -11,7 +11,7 @@ name: UI Test Automation
 
 on:
   schedule:
-    - cron: '30 2 * * 1,4' # Runs at 02:30 UTC on Monday and Thursday (8:00 AM IST approx.)
+    - cron: '30 2 * * 1,4' # Runs at 08:00 AM IST on Monday and Thursday (assuming no DST)
   workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
       - name: Set up Maven
         uses: actions/setup-maven@v4
         with:
-          maven-version: '3.9.x' # Or your preferred Maven version
+          maven-version: '3.9.3' # Using a specific Maven version
 
       - name: Run UI Tests (Headless)
         run: mvn clean test -Dbrowser=chrome-headless
@@ -55,4 +55,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: path/to/your/test-reports # **ADJUST THIS PATH TO YOUR REPORT DIRECTORY**
+          path: target/surefire-reports # ADJUST THIS PATH IF YOUR REPORT DIRECTORY IS DIFFERENT

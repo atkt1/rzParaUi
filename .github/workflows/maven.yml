@@ -45,7 +45,7 @@ jobs:
       - name: Set up Maven
         uses: actions/setup-maven@v4
         with:
-          maven-version: '3.9.3' # Using a specific Maven version
+          maven-version: '3.8.6' # Using a specific Maven version
 
       - name: Run UI Tests (Headless)
         run: mvn clean test -Dbrowser=chrome-headless
